@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+function myFunction() {
+    var laptop=['lenovo','HP'];
+    var mobile=['oneplus','samsung'];
+    var TV=['sony','onida'];
+    var printThis='<ul>';
+    var x = document.getElementById("mySelect").value;
+    if(x==0)
+    {
+        laptop.forEach(element => {
+            printThis += "<li>"+element+"</li>";
+        });
+    }
+    else if(x==1)
+    {
+        mobile.forEach(element => {
+            printThis += "<li>"+element+"</li>";
+        });
+    }
+    else if(x==2)
+    {
+        TV.forEach(element => {
+            printThis += "<li>"+element+"</li>";
+        });
+    }
+    document.getElementById("demo").innerHTML = printThis;
+}
+
+    </script>
+</head>
+<body>
+    <select id="mySelect" onchange="myFunction()">
+        <option >--select--
+        <option value="0">laptop
+        </option>
+        <option value="1">mobile
+        <option value="2">TV
+      </select>
+      
+      <p>Details:</p>
+      
+      <div id="demo"></div>
+</body>
+</html>
