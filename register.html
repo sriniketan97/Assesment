@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document validation</title>
+    <script>
+        function validate(){
+            var username=document.getElementById('username').value;
+            var password=document.getElementById('password').value;
+            var email=document.getElementById('email').value;
+            var phone=document.getElementById('phone').value;
+            var existingnames=["girish", "rahul","pradeep","parth","santosh"];
+
+            if(username.length<5 || username.length>15 || !(username.match(/^[A-Za-z]+$/)))
+            {
+                alert("Please enter the corret name");
+                document.getElementById('name').focus();
+            }
+            else if(password.length<7 || password.length>15 || !(password.match(/[A-Za-z].{8,}$/)))
+            {
+                alert("Please enter correct password");
+                document.getElementById('password').focus();
+            }
+
+            else if(phone.length!=10 || (!password.match(/[A-Za-z].{8,}$/)))
+            {
+                alert("enter valid phone no");
+                document.getElementById('phone').focus();
+            }
+         
+            else if(existingnames.indexOf(username) !== -1 )
+            {
+                alert('user name exists.....please try another name');
+                document.getElementById('name').focus();
+            }
+            
+            else
+            {
+                document.getElementById("print").innerHTML="successfully registered";
+            }
+            
+        }
+           
+            
+    </script>
+</head>
+<body>
+    <form  id="myform" >
+        User Name:<input type="text" id="username"><br></br>        
+        Password:<input type="password" id="password"><br></br>
+        E-mail:<input type="email" id="email" required><br></br>
+        Phone Number:<input type="text" id="phone"><br></br>
+        <input type="button" value="register" onclick="validate();" >
+
+    </form>
+</body>
+
+<div id="print"></div>
+</html
